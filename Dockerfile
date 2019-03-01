@@ -28,6 +28,12 @@ RUN apt-get update \
  && apt-get clean \
  && rm -r /var/lib/apt/lists/* /var/cache/*
 
+
+# install composer
+ADD install-composer.sh /install-composer.sh
+RUN mkdir /composer && bash /install-composer.sh
+
+
 # define environment
 VOLUME /symfony
 WORKDIR /symfony
