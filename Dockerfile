@@ -17,6 +17,7 @@
 FROM php:cli
 MAINTAINER martin scharm <https://binfalse.de/contact>
 
+# add dependencies
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
         zlib1g-dev \
@@ -30,12 +31,12 @@ RUN apt-get update \
  && apt-get clean \
  && rm -r /var/lib/apt/lists/* /var/cache/*
 
-
-
+# define environment
 VOLUME /symfony
 WORKDIR /symfony
 EXPOSE 8000
 
+# by default run a webserver and serve the app at :8000
 ENTRYPOINT ["php", "bin/console"]
 CMD ["server:run", "0.0.0.0:8000"]
 
