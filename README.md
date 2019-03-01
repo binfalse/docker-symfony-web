@@ -1,7 +1,7 @@
 # Docker Image for a Symfony Web Application
 A Docker image to compile and run and server a [Symfony](https://symfony.com) application.
 
-The image is available as [binfalse/symfony-web](https://cloud.docker.com/repository/docker/binfalse/symfony-web).
+The image is available as [binfalse/symfony-web](https://hub.docker.com/r/binfalse/symfony-web).
 
 # Usage
 
