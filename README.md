@@ -3,7 +3,7 @@ A Docker image to compile and run and server a [Symfony](https://symfony.com) ap
 
 The image is available as [binfalse/symfony-web](https://hub.docker.com/r/binfalse/symfony-web).
 
-# Usage
+## Usage
 
 Just mount your Symfony project to `/symfony` of a container and forward port `8000`.
 A typical call would look like this:
@@ -16,6 +16,13 @@ Open your browser at [localhost:8000](http://localhost:8000) and expect to see y
 If you do not want a webserver, but want to debug the router, you may provide alternative commands to Symfony's console, eg:
 
     docker run --rm -it -v /path/to/project:/symfony -p 8000:8000 binfalse/symfony-web debug:router
+
+
+## Bonus
+
+There is a [Composer](https://getcomposer.org/) installed at `/composer/composer.phar`, just in case you need it for something in your project...
+
+
 
 ## LICENSE
 
