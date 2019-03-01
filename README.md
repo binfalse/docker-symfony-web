@@ -8,14 +8,14 @@ The image is available as [binfalse/symfony-web](https://cloud.docker.com/reposi
 Just mount your Symfony project to `/symfony` of a container and forward port `8000`.
 A typical call would look like this:
 
-    docker run --rm -it -v /path/to/project:/symfony -p 8000:8000 symfony
+    docker run --rm -it -v /path/to/project:/symfony -p 8000:8000 binfalse/symfony-web
 
 This will spawn a webserver serving your application.
 Open your browser at [localhost:8000](http://localhost:8000) and expect to see your symfony project! :)
 
 If you do not want a webserver, but want to debug the router, you may provide alternative commands to Symfony's console, eg:
 
-    docker run --rm -it -v /path/to/project:/symfony -p 8000:8000 symfony debug:router
+    docker run --rm -it -v /path/to/project:/symfony -p 8000:8000 binfalse/symfony-web debug:router
 
 ## LICENSE
 
