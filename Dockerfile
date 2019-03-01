@@ -18,12 +18,22 @@ FROM php:cli
 MAINTAINER martin scharm <https://binfalse.de/contact>
 
 # add dependencies
-RUN apt-get update \
+RUN echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list \
+ && apt-get update \
  && apt-get install -y --no-install-recommends \
-        zlib1g-dev \
-        git \
-        graphviz \
-        libzip-dev \
+    gnupg \
+    apt-transport-https \
+ && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+ && echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends \
+    zlib1g-dev \
+    git \
+    graphviz \
+    libzip-dev \
+ && apt-get install -t testing --no-install-recommends -y \
+    yarn \
+    nodejs \
  && docker-php-ext-install zip pcntl \
  && apt-get clean \
  && rm -r /var/lib/apt/lists/* /var/cache/*
