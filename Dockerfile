@@ -25,9 +25,6 @@ RUN apt-get update \
         graphviz \
         libzip-dev \
  && docker-php-ext-install zip pcntl \
- && apt-get purge -y -q --autoremove \
-    zlib1g-dev \
-    libzip-dev \
  && apt-get clean \
  && rm -r /var/lib/apt/lists/* /var/cache/*
 
