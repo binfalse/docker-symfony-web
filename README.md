@@ -21,6 +21,7 @@ If you do not want a webserver, but want to debug the router, you may provide al
 ## Bonus
 
 There is a [Composer](https://getcomposer.org/) installed at `/composer/composer.phar`, just in case you need it for something in your project...
+Composer is also linked to `/usr/bin/composer`, so you should be able to just run it as `composer ....`
 
 
 
