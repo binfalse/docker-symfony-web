@@ -43,7 +43,7 @@ RUN echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >>
 ADD install-composer.sh /install-composer.sh
 RUN mkdir /composer \
  && bash /install-composer.sh \
- && ln -s /usr/bin/composer /composer/composer.phar
+ && ln -s /composer/composer.phar /usr/bin/composer
 
 
 # define environment
