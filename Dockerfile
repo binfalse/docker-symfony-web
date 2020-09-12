@@ -18,8 +18,7 @@ FROM php:cli
 MAINTAINER martin scharm <https://binfalse.de/contact>
 
 # add dependencies
-RUN echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list \
- && apt-get update \
+RUN apt-get update \
  && apt-get install -y --no-install-recommends \
     gnupg \
     apt-transport-https \
@@ -31,7 +30,6 @@ RUN echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >>
     git \
     graphviz \
     libzip-dev \
- && apt-get install -t testing --no-install-recommends -y \
     yarn \
     nodejs \
  && docker-php-ext-install zip pcntl \
